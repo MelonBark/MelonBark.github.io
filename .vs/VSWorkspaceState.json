@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MelonBark_files"
+    "\\fonts",
+    "\\MelonBark_files",
+    "\\svg"
   ],
-  "SelectedNode": "\\temp-home.html",
+  "SelectedNode": "\\fonts",
   "PreviewInSolutionExplorer": false
 }
