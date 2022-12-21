@@ -1,0 +1,78 @@
+﻿body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-color: black;
+    transition: height 0.3s;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-items {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.logo {
+    float: left;
+    /*height: 100%;*/
+    padding: 0px 20px;
+    margin: 15px 0px 0px 0px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    
+    height: 50px;
+    width: 100px;
+    max-height: 80px;
+    max-width: 100%;
+}
+
+img {
+    height: 50px;
+}
+
+.nav-items {
+    float: right;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+    .nav-items a {
+        margin: 0 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+.hamburger {
+    display: none;
+    float: right;
+    height: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+    .hamburger img {
+        height: 24px;
+        width: 24px;
+    }
