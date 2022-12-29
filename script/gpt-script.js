@@ -1,5 +1,7 @@
 ﻿const header = document.querySelector('header');
 let prevScrollpos = window.pageYOffset;
+var today = new Date();
+var year = today.getFullYear();
 
 window.onscroll = function () {
     let currentScrollPos = window.pageYOffset;
@@ -10,3 +12,7 @@ window.onscroll = function () {
     }
     prevScrollpos = currentScrollPos;
 }
+
+window.onload = function () {
+    document.getElementById("displayYear").innerHTML = year;
+};

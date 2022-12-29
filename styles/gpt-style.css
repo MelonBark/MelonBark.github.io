@@ -1,6 +1,6 @@
-﻿body
-{
+﻿body {
     font-family: Arial, Helvetica, sans-serif;
+    /*position: relative;*/
 }
 
 header {
@@ -13,9 +13,46 @@ header {
     transition: height 0.3s;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    color: #85858B;
+    font-size: .75em;
+}
+
+.footer a {
+    display: inline-block;    
+    color: #85858B;
+    text-decoration: none;
+    margin: 1em;
+}
+
+.footer img {
+    height: 20px;
+    clear: both;
+    margin-left: 1em;
+}
+
+
+.footerLinks {
+    margin-top: 1em;
+    display: block;
+}
+
+.copyright {
+    margin-left: 1em;
+    display: block;
+    margin-bottom: 4em;
+}
+
 @media (max-width: 768px) {
     header {
         height: 60px;
+    }
+    
+    .hamburger {
+        display: none;
+        visibility: hidden;
     }
 }
 
@@ -26,6 +63,7 @@ header {
 
     .hamburger {
         display: block;
+        visibility: visible;
     }
 }
 
@@ -44,7 +82,7 @@ header {
 }
 
 .logo img {
-    height: 50px;
+    height: 40px;
 }
 
 nav {
@@ -73,6 +111,7 @@ nav {
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    visibility: hidden;
     /*TODO: Figure out why display: none; seems to be having no effect with media queries.*/
 }
 
