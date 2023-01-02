@@ -43,17 +43,6 @@ footer {
     margin-bottom: 4em;
 }
 
-@media (max-width: 768px) {
-    header {
-        height: 60px;
-    }
-    
-    .hamburger {
-        display: none;
-        visibility: hidden;
-    }
-}
-
 @media (max-width: 480px) {
     .nav-items {
         display: none;
@@ -116,4 +105,104 @@ nav {
 .hamburger img {
    height: 24px;
    width: 24px;
+}
+
+footer {
+    width: 100%;
+}
+
+.footerTop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.footerNav {
+    display: flex;
+    width: 60%;
+    
+}
+
+.footerMenu {
+    float: left;
+    flex-basis: 100%;
+    margin-bottom: 5em;
+}
+
+.footerHeader {
+    font-weight: bold;
+    color: black;
+    font-size: 1.5em;
+}
+
+.footerSignup {
+    font-weight: bold;
+    color: black;
+    font-size: 1.5em;
+    margin: 2em;
+    align-content: center;
+}
+
+.footerSignupForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #86868b;
+    margin: 2em;
+}
+
+input {
+    border: none;
+    outline: 0;
+    margin: .5em;
+}
+
+.footerSubmenu {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+.footerSubmenu a {
+    margin-top: 1em;
+    text-decoration: none;
+    color: #000;
+}
+
+.footerSocial {
+}
+
+.footerSocialLinks {
+    margin-top: 1em;
+}
+
+.footerSocial a {
+    margin-right: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+    .footerTop {
+        flex-direction: column;
+    }
+    
+    .footerSignupForm {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .submenu {
+        text-align: center;
+        margin-bottom: 4rem;
+        padding-right: 0;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    .hamburger {
+        display: none;
+        visibility: hidden;
+    }
 }
