@@ -1,5 +1,7 @@
 ﻿body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-feature-settings: 'kern';
     /*position: relative;*/
 }
 
@@ -11,6 +13,44 @@ header {
     height: 80px;
     background-color: black;
     transition: height 0.3s;
+}
+
+.content {
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding-top: 10em;
+    width: 100%;
+}
+
+.overview {
+    text-align: center;
+    word-wrap: break-word;
+    margin: 0 10%;
+    margin-bottom: 5em;
+}
+
+.overview h3 {
+    font-size: 1.25em;
+    line-height: 1.5em;
+    font-weight: 400;
+}
+
+.overview a {
+    color: #fff;    
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.overview a:hover {
+    color: #85858B;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.overviewHeading {
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 footer {
