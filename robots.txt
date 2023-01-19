@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cgi-bin/
+
+Sitemap: http://www.melonbark.com/sitemap.xml
