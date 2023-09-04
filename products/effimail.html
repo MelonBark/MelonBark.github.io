@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* CSS code for styling the landing page */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      width: 200px;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .headline {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: #333333;
+      margin-top: 40px;
+    }
+
+    .split {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 60px;
+    }
+
+    .split .half {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .split .half h2 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: normal;
+      color: #ffffff;
+    }
+
+    .split .half p {
+      text-align: center;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    .split .half a {
+      display: block;
+      width: 200px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #333333;
+      border-radius: 25px;
+      margin: 20px auto;
+    }
+
+    .split .half.business {
+      background-color: #00a0d2; /* Light blue */
+    }
+
+    .split .half.consumer {
+      background-color: #00d284; /* Light green */
+    }
+
+    @media screen and (min-width: 768px) {
+      
+        /* Make the layout responsive for desktop and wide-screen displays */
+        .split {
+          flex-direction: row; /* Split horizontally */
+        }
+      
+        .split .half {
+          width: 50%; /* Each half takes up half of the screen width */
+        }
+      
+        .split .half.business a {
+          background-color:#0082a8; /* Darker blue */
+        }
+      
+        .split .half.consumer a {
+          background-color:#00a85a; /* Darker green */
+        }
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Logo -->
+    <img src="images/effimail-logo.png" alt="EffiMail Logo" class="logo" />
+
+    <!-- Headline -->
+    <h1 class="headline">Redefining Mail—Save Money, Save Trees</h1>
+
+    <!-- Split section for businesses and consumers -->
+    <div class="split">
+
+        <!-- Business section -->
+        <div class="half business">
+          <h2>Digitize your advertisements and reach your customers more efficiently.</h2>
+          <!-- <p>With EffiMail, you can send personalized and targeted ads to your customers via email, without wasting paper or money on postage.</p> -->
+          <!-- <a href="#" onclick="sendEmail('hello+effimailbiz@melonbark.com')">Contact Us</a> -->
+          <a href="#" onclick="showBizForm()">Join the Future of Mail Today</a>
+        </div>
+
+        <!-- Consumer section -->
+        <div class="half consumer">
+          <h2>Opt-in to control your mailbox. Less clutter, more of what you care about.</h2>
+          <!-- <p>With EffiMail, you can choose which ads you want to receive in your email, and stop getting unwanted junk mail in your physical mailbox.</p> -->
+          <a href="#" onclick="showForm()">Join the Future of Mail Today</a>
+        </div>
+
+    </div>
+
+  </div>
+
+  <!-- Business opt-in form -->
+  <div id="bizForm" style="display:none;">
+    
+    <!-- Form content -->
+    <form id="optin-form" onsubmit="return submitBizForm()">
+        <h3>Join the Future of Mail Today</h3>
+        <p>Please enter your current info and email address to join our waitlist.</p>
+        <label for="bizName">Name:</label>
+        <input type="text" id="bizName" name="bizName" required />
+        </p>
+        <p>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required  />
+        </p>
+        <p>
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" required  />
+        </p>
+        <p>
+            <label for="bizCity">City:</label>
+            <input type="text" id="bizCity" name="bizCity" required  />
+            <label for="bizState">State:</label>
+            <input type="text" id="bizState" name="bizState" required  />
+            <label for="bizZip">Postal code:</label>
+            <input type="text" id="bizZip" name="bizZip" required  />
+        </p>
+        <p>
+            <label for="bizCountry">Country:</label>
+            <input type="text" id="bizCountry" name="bizCountry" required />
+        </p>
+        <p>
+            <label for="bizEmail">Email:</label>
+            <input type="email" id="bizEmail" name="bizEmail" required />
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+            <button type="button" onclick="hideForm()">Cancel</button>
+        </p>
+    </form>
+
+    <!-- Form overlay -->
+    <div id="overlay" onclick="hideForm()"></div>
+
+ </div>
+
+  <!-- Consumer opt-in form -->
+  <div id="form" style="display:none;">
+    
+     <!-- Form content -->
+    <form id="optin-form" onsubmit="return submitForm()">
+        <h3>Join the Future of Mail Today</h3>
+        <p>Please enter your current mailing address and email address to join our waitlist.</p>
+        <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+        </p>
+        <p>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required />
+        </p>
+        <p>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required />
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required />
+            <label for="zip">Postal code:</label>
+            <input type="text" id="zip" name="zip" required />
+        </p>
+        <p>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required />
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+        </p>
+        <p><i>NOTE: This info is for internal routing and address verification purposes only and will not be provided to
+            marketers.</i></p>
+        <p>
+            <button type="submit">Submit</button>
+            <button type="button" onclick="hideForm()">Cancel</button>
+        </p>
+    </form>
+
+     <!-- Form overlay -->
+     <div id="overlay" onclick="hideForm()"></div>
+
+  </div>
+
+  <script>
+    // JavaScript code for handling the form and email functions
+
+    // Show the form
+    function showForm() {
+      document.getElementById("form").style.display = "block";
+      document.getElementById("bizForm").style.display = "none";
+    }
+
+    function showBizForm() {
+      document.getElementById("bizForm").style.display = "block";
+      document.getElementById("form").style.display = "none";
+    }
+
+    // Hide the form
+    function hideForm() {
+      document.getElementById("form").style.display = "none";
+      document.getElementById("bizForm").style.display = "none";
+    }
+
+    // Submit the Business form
+    function submitBizForm() {
+      // Get the form data
+      var name = document.getElementById("bizName").value;
+      var title = document.getElementById("title").value;
+      var company = document.getElementById("company").value;
+      var city = document.getElementById("bizCity").value;
+      var state = document.getElementById("bizState").value;
+      var zip = document.getElementById("bizZip").value;
+      var country = document.getElementById("bizCountry").value;
+      var email = document.getElementById("bizEmail").value;
+
+      // Validate the form data
+      if (name && email) {
+        // Send the form data to the email address
+        sendBizEmail("hello+effimailbiz@melonbark.com", name, title, company, city, state, zip, country, email);
+        // Show a confirmation message
+        alert("Thank you for joining our waitlist. Please finalize submission by hitting send on the email draft we've created for you. We will contact you soon.");
+        // Hide the form
+        hideForm();
+      } else {
+        // Show an error message
+        alert("Please fill in all the fields.");
+      }
+
+      // Prevent the default form submission behavior
+      return false;
+    }
+
+    // Submit the Consumer form
+    function submitForm() {
+      // Get the form data
+      var name = document.getElementById("name").value;
+      var address = document.getElementById("address").value;
+      var city = document.getElementById("city").value;
+      var state = document.getElementById("state").value;
+      var zip = document.getElementById("zip").value;
+      var country = document.getElementById("country").value;
+      var email = document.getElementById("email").value;
+
+      // Validate the form data
+      if (name && address && email) {
+        // Send the form data to the email address
+        sendEmail("hello+effimail@melonbark.com", name, address, city, state, zip, country, email);
+        // Show a confirmation message
+        alert("Thank you for joining our waitlist. Please finalize submission by hitting send on the email draft we've created for you. We will contact you soon.");
+        // Hide the form
+        hideForm();
+      } else {
+        // Show an error message
+        alert("Please fill in all the fields.");
+      }
+
+      // Prevent the default form submission behavior
+      return false;
+    }
+
+    // Send a Biz email to the specified address with the optional parameters
+    function sendBizEmail(to, name, title, company, city, state, zip, country, email) {
+      // Create a mailto link with the parameters
+      var link = "mailto:" + to;
+      if (name && email) {
+        link += "?subject=Business&body=Name: " + name + "%0D%0ATitle: " + title + "%0D%0ACompany: " + company + "%0D%0ACity: " + city + "%0D%0AState: " + state + "%0D%0AZip: " + zip + "%0D%0ACountry: " + country + "%0D%0AEmail: " + email;
+      }
+      // Open the mailto link in a new window
+      window.open(link, "_blank");
+    }
+
+    // Send a Consumer email to the specified address with the optional parameters
+    function sendEmail(to, name, address, city, state, zip, country, email) {
+      // Create a mailto link with the parameters
+      var link = "mailto:" + to;
+      if (name && address && email) {
+        link += "?subject=Consumer Opt-in&body=Name: " + name + "%0D%0AAddress: " + address + "%0D%0ACity: " + city + "%0D%0AState: " + state + "%0D%0AZip: " + zip + "%0D%0ACountry: " + country + "%0D%0AEmail: " + email;
+      }
+      // Open the mailto link in a new window
+      window.open(link, "_blank");
+    }
+
+  </script>
+</body>
+</html>
