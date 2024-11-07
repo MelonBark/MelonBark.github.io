@@ -1,0 +1,40 @@
+{
+  "short_name": "Melon Bark",
+  "name": "Melon Bark - Tech Consulting",
+  "icons": [
+    {
+      "src": "/assets/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#689F38", // MudBlazor LightGreen - Darken2
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#689F38",
+  "description": "Discover innovative tech solutions with Melon Bark, your partner in digital transformation.",
+  "orientation": "portrait-primary",
+  "lang": "en-US"
+}

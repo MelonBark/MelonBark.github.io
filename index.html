@@ -1,73 +1,127 @@
 <!DOCTYPE html>
+<html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Melon Bark: Expert Online Marketing & Tech-Driven Business Solutions</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="stylesheet" href="/styles/style.css" />
-    <script src="/script/script.js"></script>
-    <script src="/script/w3-include-html.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#000" />
-    <meta name="description" content="Galena, Ohio based Melon Bark has 25+ years of experience building and maintaining websites large and small. Reach out for a free consult today!" />
-    <META NAME="geo.position" CONTENT="40.21536041298822; -82.87969925125871">
-    <META NAME="geo.placename" CONTENT="Galena, OH">
-    <META NAME="geo.region" CONTENT="US">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Melon Bark | Loading...</title>
+    <base href="/" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link href="manifest.json" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="stylesheet" href="~/Styles/MelonBark.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GF33EQ830">
-    </script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        #loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Roboto', Arial, sans-serif;
+            color: white;
+            z-index: 1000;
+        }
 
-    gtag('config', 'G-0GF33EQ830');
-    </script>
+        #melon-bark-logo {
+            width: 150px;
+            height: 150px;
+            animation: pulseLogo 4s ease-in-out infinite;
+            filter: invert(1);
+        }
 
-    <!-- Clarity tracking code for https://melonbark.com/ -->
-    <script>
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt";
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "ex0ghestqv");
-    </script>
+        @keyframes pulseLogo {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            20% {
+                transform: rotate(180deg);
+            }
+
+            50% {
+                transform: rotate(360deg);
+            }
+
+            75% {
+                transform: rotate(360deg);
+                animation-timing-function: ease-out;
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        #loading-text {
+            font-size: 24px;
+            margin-top: 20px;
+            animation: fadeToBlack 2s ease-in-out infinite;
+        }
+
+        @keyframes fadeToBlack {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
-<body>
-    <div w3-include-html="/header.html"></div>
 
-    <div class="content">
-        <div class="overview">
-            <div class="overviewHeading">Overview</div>
-            <h3>
-                Melon Bark helps businesses improve their online marketing, customer
-                experience, and business processes through the use of technology.
-            </h3>
-            <h3>
-                We offer services such as SEO, social media marketing, <a href=".\web-design\galena-ohio.html">website design</a>
-                (focused on accessibility, compatibility, performance,
-                security, and localization), customer experience analysis, expert services, e-discovery, and
-                custom automation solutions.
-            </h3>
-            <h3>
-                Our team has expertise in these areas and works with clients to
-                develop strategies that drive results and achieve their goals.
-            </h3>
-            <h3>
-                <a target="_self" href="mailto:hello@melonbark.com?subject=Website%20Request&body=I%20saw%20your%20site,%20when%20can%20we%20meet%20to%20discuss">Contact us</a> to learn more about how we can help
-                your business succeed.
-            </h3>
-        </div>
+<body>
+    <div id="loading-container">
+        <img id="melon-bark-logo" src="/assets/black_on_white-square.svg" alt="Melon Bark Logo">
+        <h1 id="loading-text">Loading...</h1>
     </div>
 
-    <div w3-include-html="/footer.html"></div>
+    <div id="app"></div>
 
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
     <script>
-        includeHTML();
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(function (error) {
+                    console.log('Service Worker registration failed:', error);
+                });
+            });
+        }
+
+        // Function to hide loading screen
+        window.hideLoadingScreen = function () {
+            const loadingContainer = document.getElementById('loading-container');
+            if (loadingContainer) {
+                loadingContainer.style.display = 'none';
+            }
+        };
     </script>
 </body>
+
 </html>
